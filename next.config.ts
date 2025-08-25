@@ -1,8 +1,10 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  outputFileTracingIncludes: {
+    '/api/chat': ['./app/data/**/*'],
+  },
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  
+
 };
 
 export default nextConfig;
