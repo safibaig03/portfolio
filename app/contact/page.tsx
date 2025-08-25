@@ -42,7 +42,7 @@ export default function ContactPage() {
         <div className="text-center">
           <CheckCircle className="w-20 h-20 text-green-400 mx-auto mb-6" />
           <h1 className="text-4xl font-bold mb-4">Message Sent!</h1>
-          <p className="text-xl text-gray-300 mb-8">Thank you for reaching out. I'll get back to you soon!</p>
+          <p className="text-xl text-gray-300 mb-8">Thank you for reaching out. I&apos;ll get back to you soon!</p>
           <button
             onClick={() => setIsSubmitted(false)}
             className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300"
@@ -64,7 +64,7 @@ export default function ContactPage() {
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Get In Touch</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Have a question or want to collaborate? I'd love to hear from you!
+            Have a question or want to collaborate? I&apos;d love to hear from you!
           </p>
         </motion.header>
 
@@ -77,9 +77,9 @@ export default function ContactPage() {
             className="space-y-8"
           >
             <div>
-              <h2 className="text-2xl font-bold mb-6 text-white">Let's Connect</h2>
+              <h2 className="text-2xl font-bold mb-6 text-white">Let&apos;s Connect</h2>
               <p className="text-gray-400 mb-8 leading-relaxed">
-                I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and development.
+                I&apos;m always open to discussing new opportunities, interesting projects, or just having a chat about technology and development.
               </p>
             </div>
 
