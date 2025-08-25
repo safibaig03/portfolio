@@ -1,8 +1,5 @@
-import fs from 'fs';
-import path from 'path';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const DATA_DIR = path.join(process.cwd(), 'app', 'data');
 const CHUNK_SIZE = 1000;
 const CHUNK_OVERLAP = 200;
 
@@ -20,41 +17,19 @@ function chunkText(text, chunkSize = CHUNK_SIZE, overlap = CHUNK_OVERLAP) {
   return chunks;
 }
 
-async function loadAndEmbedKnowledgeBase() {
-  try {
-    if (!fs.existsSync(DATA_DIR)) {
-      console.error(`DATA_DIR not found: ${DATA_DIR}`);
-      return [];
-    }
-
-    const textFiles = fs.readdirSync(DATA_DIR).filter(f => f.endsWith('.txt'));
-
-    if (textFiles.length === 0) {
-      console.error("No .txt files found in data directory.");
-      return [];
-    }
-
-    let allChunks = [];
-    for (const file of textFiles) {
-      const filePath = path.join(DATA_DIR, file);
-      const content = fs.readFileSync(filePath, 'utf-8');
-      const chunks = chunkText(content);
-      allChunks.push(...chunks.map(chunk => ({ chunk, source: file })));
-    }
-    console.log(`Successfully loaded ${allChunks.length} chunks from ${textFiles.length} files.`);
-    return allChunks;
-  } catch (error) {
-    console.error("Failed to load knowledge base:", error);
+function getKnowledgeBaseChunks() {
+  const rawText = process.env.KNOWLEDGE_BASE_TEXT;
+  if (!rawText) {
+    console.error("KNOWLEDGE_BASE_TEXT environment variable is not set.");
     return [];
   }
+  return chunkText(rawText);
 }
 
-const knowledgeBasePromise = loadAndEmbedKnowledgeBase();
+const knowledgeBase = getKnowledgeBaseChunks();
 
 export async function getPdfQa() {
-  const knowledgeBase = await knowledgeBasePromise;
-
-  if (!knowledgeBase || knowledgeBase.length === 0) {
+  if (knowledgeBase.length === 0) {
     console.error("Knowledge base is empty. AI will have no context.");
   }
 
@@ -70,7 +45,7 @@ export async function getPdfQa() {
               return { answer: "I'm sorry, my knowledge base is currently empty. I can't answer questions about Safi right now." };
             }
 
-            const context = knowledgeBase.map(({ chunk }) => chunk).join('\n---\n');
+            const context = knowledgeBase.join('\n---\n');
 
             const prompt = `You are Safi's AI assistant. Answer questions about Safi based on the context below.
 
@@ -89,8 +64,7 @@ Question: ${input}
 Answer as Safi (in first person):`;
 
             const result = await model.generateContent(prompt);
-            const response = result.response;
-            const text = response.text();
+            const text = result.response.text();
 
             return { answer: text };
           } catch (error) {
