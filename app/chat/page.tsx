@@ -6,7 +6,7 @@ export default function ChatPage() {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hi! I&apos;m Safi&apos;s AI. Ask me anything about my projects, skills, or experience!",
+      text: "Hi! I'm Safi's AI. Ask me anything about my projects, skills, or experience!",
       sender: 'ai',
       timestamp: 'Just now'
     }
@@ -51,7 +51,7 @@ export default function ChatPage() {
       
       const aiResponse = {
         id: messages.length + 2,
-        text: data.answer || "I&apos;m sorry, I couldn&apos;t process your request.",
+        text: data.answer || "I'm sorry, I couldn't process your request.",
         sender: 'ai',
         timestamp: getCurrentTime()
       }
@@ -62,7 +62,7 @@ export default function ChatPage() {
       
       const aiResponse = {
         id: messages.length + 2,
-        text: "I&apos;m sorry, I encountered an error. Please try again.",
+        text: "I'm sorry, I encountered an error. Please try again.",
         sender: 'ai',
         timestamp: getCurrentTime()
       }
