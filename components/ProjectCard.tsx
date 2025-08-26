@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, Code, Globe, Database, Brain } from 'lucide-react'
+import { ExternalLink, Github, Code, Globe, Database, Brain,MessagesSquare } from 'lucide-react'
 import React from 'react'
 
 interface ProjectCardProps {
@@ -16,6 +16,7 @@ const ProjectCard = ({ title, description, link, github, tech }: ProjectCardProp
     if (projectTitle.includes('Leafyze')) return <Brain className="w-6 h-6 text-gray-400" />
     if (projectTitle.includes('BookIt')) return <Database className="w-6 h-6 text-gray-400" />
     if (projectTitle.includes('JobJet')) return <Globe className="w-6 h-6 text-gray-400" />
+    if (projectTitle.includes('CommentAizer')) return <MessagesSquare className="w-6 h-6 text-gray-300" />
     return <Code className="w-8 h-8 text-gray-400" />
   }
 

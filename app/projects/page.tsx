@@ -2,18 +2,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Brain, BookOpen, Briefcase } from 'lucide-react';
+import { Github, ExternalLink, Brain, BookOpen, Briefcase, MessagesSquare } from 'lucide-react';
 
 export default function ProjectsPage() {
   const projects = [
-    {
-      title: "YouTube Comment Summarizer",
-      description: "Developed a web application to generate concise summaries of YouTube video comments using Google's Gemini API. Integrated both the YouTube Data API v3 and the Gemini API, orchestrating the workflow with LangChain to manage API calls efficiently.",
-      technologies: ["Streamlit", "LangChain", "Google Gemini API", "Python", "YouTube Data API v3"],
-      liveLink: "https://safibaig03-commentaizer-app-ho2knc.streamlit.app/",
-      githubLink: "https://github.com/safibaig03/commentAizer",
-      year: "2025"
-    },
     {
       title: "Leafyze - Image Classification App",
       description: "Built a CNN with TensorFlow and Keras to classify tomato leaves as healthy, early blight, or late blight. Deployed an interactive Streamlit app with real-time image uploads and preprocessing using PIL for improved accuracy.",
@@ -37,7 +29,15 @@ export default function ProjectsPage() {
       liveLink: "https://jobjet-beryl.vercel.app/",
       githubLink: "https://github.com/safibaig03/Jobjet",
       year: "2025"
-    }
+    },
+    {
+      title: "CommentAizer - YouTube Comment Summarizer",
+      description: "Developed a web application to generate concise summaries of YouTube video comments using Google's Gemini API. Integrated both the YouTube Data API v3 and the Gemini API, orchestrating the workflow with LangChain to manage API calls efficiently.",
+      technologies: ["Streamlit", "LangChain", "Google Gemini API", "Python", "YouTube Data API v3"],
+      liveLink: "https://safibaig03-commentaizer-app-ho2knc.streamlit.app/",
+      githubLink: "https://github.com/safibaig03/commentaizer",
+      year: "2025"
+    },
   ];
 
   return (
@@ -72,6 +72,7 @@ export default function ProjectsPage() {
                       {project.title.includes('Leafyze') && <Brain className="w-6 h-6 text-gray-300" />}
                       {project.title.includes('BookIt') && <BookOpen className="w-6 h-6 text-gray-300" />}
                       {project.title.includes('JobJet') && <Briefcase className="w-6 h-6 text-gray-300" />}
+                      {project.title.includes('CommentAizer') && <MessagesSquare className="w-6 h-6 text-gray-300" />}
                     </div>
                   </div>
                   <span className="text-xs text-gray-500 font-medium bg-gray-800/80 px-3 py-1 rounded-full border border-gray-700">

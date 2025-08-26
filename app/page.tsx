@@ -44,8 +44,8 @@ export default function Home() {
             <ProjectCard
               title="CommentAizer - YouTube Comment Summarizer"
               description="Generates concise summaries of YouTube video comments using the Google Gemini API. Integrated the YouTube Data API and used LangChain for AI orchestration and efficient API call management."
-              link="https://safibaig03-commentaizer-app-ho2knc.streamlit.app/"
-              github="https://github.com/safibaig03/commentaizer"
+              link="https://commentaizer.streamlit.app/"
+              github="https://github.com/safibaig03/commentAizer"
               tech={["Streamlit", "LangChain", "Google Gemini API", "Python", "YouTube Data API v3"]}
             />
           </div>

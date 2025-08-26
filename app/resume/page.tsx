@@ -73,6 +73,16 @@ const projects = [
     ],
     technologies: 'React, Tailwind CSS, Shadcn UI, React Query, Express.js, Drizzle ORM, PostgreSQL, Passport.js',
   },
+  {
+    title: 'CommentAizer - YouTube Comment Summarizer',
+    description: [
+      'Developed a web app using Google\'s Gemini API to generate concise summaries of YouTube video comments.',
+      'Integrated the official YouTube Data API v3 to dynamically fetch comment data from any public video.',
+      'Utilized LangChain to orchestrate the AI workflow, implementing an efficient `stuff` chain to manage API calls.',
+      'Built a clean and interactive user interface with Streamlit for a seamless user experience.',
+    ],
+    technologies: 'Streamlit, LangChain, Google Gemini API, Python, YouTube Data API v3',
+  },
 ];
 
 const certifications = [
