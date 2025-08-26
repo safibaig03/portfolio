@@ -7,6 +7,14 @@ import { Github, ExternalLink, Brain, BookOpen, Briefcase } from 'lucide-react';
 export default function ProjectsPage() {
   const projects = [
     {
+      title: "YouTube Comment Summarizer",
+      description: "Developed a web application to generate concise summaries of YouTube video comments using Google's Gemini API. Integrated both the YouTube Data API v3 and the Gemini API, orchestrating the workflow with LangChain to manage API calls efficiently.",
+      technologies: ["Streamlit", "LangChain", "Google Gemini API", "Python", "YouTube Data API v3"],
+      liveLink: "https://safibaig03-commentaizer-app-ho2knc.streamlit.app/",
+      githubLink: "https://github.com/safibaig03/commentAizer",
+      year: "2025"
+    },
+    {
       title: "Leafyze - Image Classification App",
       description: "Built a CNN with TensorFlow and Keras to classify tomato leaves as healthy, early blight, or late blight. Deployed an interactive Streamlit app with real-time image uploads and preprocessing using PIL for improved accuracy.",
       technologies: ["Python", "TensorFlow", "Keras", "Streamlit", "PIL"],

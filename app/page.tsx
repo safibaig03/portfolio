@@ -28,7 +28,7 @@ export default function Home() {
               tech={["Python", "TensorFlow", "Keras", "Streamlit", "PIL"]}
             />
             <ProjectCard
-              title="BookIt"
+              title="BookIt - BookStore Web Application"
               description="Booking management system simplifying appointment scheduling and resource tracking. Full-stack solution with React, Node.js, and MongoDB."
               link="#"
               github="https://github.com/safibaig03/bookit"
@@ -37,9 +37,16 @@ export default function Home() {
             <ProjectCard
               title="JobJet - Job Board Platform"
               description="Full-stack job board platform with multi-role authentication, company profiles, job postings, and application workflows. Built dashboards and secure backend with Express.js, Drizzle ORM, and PostgreSQL."
-              link="#"
+              link="https://jobjet-beryl.vercel.app/"
               github="https://github.com/safibaig03/jobjet"
               tech={["React", "Tailwind CSS", "Shadcn UI", "React Query", "Express.js", "Drizzle ORM", "PostgreSQL", "Passport.js"]}
+            />
+            <ProjectCard
+              title="CommentAizer - YouTube Comment Summarizer"
+              description="Generates concise summaries of YouTube video comments using the Google Gemini API. Integrated the YouTube Data API and used LangChain for AI orchestration and efficient API call management."
+              link="https://safibaig03-commentaizer-app-ho2knc.streamlit.app/"
+              github="https://github.com/safibaig03/commentaizer"
+              tech={["Streamlit", "LangChain", "Google Gemini API", "Python", "YouTube Data API v3"]}
             />
           </div>
 
