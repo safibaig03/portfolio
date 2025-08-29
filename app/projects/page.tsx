@@ -34,7 +34,7 @@ export default function ProjectsPage() {
       title: "CommentAizer - YouTube Comment Summarizer",
       description: "Developed a web application to generate concise summaries of YouTube video comments using Google's Gemini API. Integrated both the YouTube Data API v3 and the Gemini API, orchestrating the workflow with LangChain to manage API calls efficiently.",
       technologies: ["Streamlit", "LangChain", "Google Gemini API", "Python", "YouTube Data API v3"],
-      liveLink: "https://safibaig03-commentaizer-app-ho2knc.streamlit.app/",
+      liveLink: "https://commentaizer.streamlit.app/",
       githubLink: "https://github.com/safibaig03/commentaizer",
       year: "2025"
     },
